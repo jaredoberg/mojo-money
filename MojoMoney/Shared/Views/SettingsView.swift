@@ -110,15 +110,20 @@ struct SettingsView: View {
         if let creds = KeychainService.shared.getMonarchCredentials() {
             email = creds.email
         }
-        // Resolve projectRoot first so venv detection works correctly
+        // Resolve projectRoot first
         if projectRoot.isEmpty {
             projectRoot = PythonBridge.detectProjectRoot()
         }
-        if pythonExecutable.isEmpty {
+        // Always prefer the venv python if it exists — the stored value may point
+        // to system python from an earlier launch before the venv was created.
+        let venvPython = "\(projectRoot)/python/.venv/bin/python3"
+        if FileManager.default.fileExists(atPath: venvPython) {
+            pythonExecutable = venvPython
+        } else if pythonExecutable.isEmpty {
             pythonExecutable = PythonBridge.detectPython(projectRoot: projectRoot)
         }
-        // Sync resolved values into the shared bridge instance — it initializes
-        // once at app launch before these UserDefaults keys exist, so push updates now.
+        // Sync into the shared bridge — it initializes once at app launch
+        // before these UserDefaults keys exist, so push updates now.
         PythonBridge.shared.projectRoot      = projectRoot
         PythonBridge.shared.pythonExecutable = pythonExecutable
     }
