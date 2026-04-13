@@ -1,0 +1,721 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		06C5FE89D385D387DCD95F6A /* ModuleRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C69E52E2A38CA3581943AB /* ModuleRegistry.swift */; };
+		09B42C53C8E66C10E3BF1C19 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D2327B6665B5DB7048D54B /* SettingsView.swift */; };
+		0FBF3C54C131684E7B582F33 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F5140E1E6BCB5E708B33D5 /* DatabaseService.swift */; };
+		16762641C4ED38B3F1EFD1C1 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51D708A6AC33CE7BF6E7985 /* KeychainService.swift */; };
+		1843ADB36ED4E0C0A43FB146 /* TransactionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0383E0FECBD21D61E4DED52 /* TransactionRow.swift */; };
+		18DA24317C9A121AD7248E88 /* HDSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A80C8A30CADCCF2E103E070 /* HDSettingsView.swift */; };
+		1C9D4F84C807E622BD15266F /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACDF765510AEE3BD5EBFE71 /* OnboardingView.swift */; };
+		1D84DE92F9F3E9367C5E7405 /* MOJOButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E3BA1504BE26E85BACF2F7 /* MOJOButton.swift */; };
+		1EE1C67A2C16970B44F13ABD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 851412F6F3FD9CFD3D99A768 /* Assets.xcassets */; };
+		206BF136F6E4216AE7631349 /* MatchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D226A9F222F018652A097A6B /* MatchResult.swift */; };
+		2315CC529D81781A3C5C4B72 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACDF765510AEE3BD5EBFE71 /* OnboardingView.swift */; };
+		27FF4E3DB8E4A5BCCF55F7F9 /* SyncRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6BA72F0600DF76F136F487 /* SyncRun.swift */; };
+		29E3D2AB652506C4B0EF6FD0 /* HDImportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646EE0691466C47081C567E6 /* HDImportView.swift */; };
+		2C323E353FE9FD0BF8FFA076 /* HDHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DEBB767FED41735D1F3BD2 /* HDHistoryView.swift */; };
+		2F567F5EC72B98CB3E2F50AC /* HDLineItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0CB3D1FC043C70D19309FB /* HDLineItem.swift */; };
+		32BFF07EF86A8B30CB1393A6 /* MojoMoneyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1F1522B2F44FF813ECF844 /* MojoMoneyApp.swift */; };
+		33B91790A4F2F852195DB332 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F5140E1E6BCB5E708B33D5 /* DatabaseService.swift */; };
+		3658D4BCCCECC7CA82595FFE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2094474E7D726CF3E928EEF0 /* ContentView.swift */; };
+		3BEE5FF617EDAAA8B7BC9ED4 /* LowesSyncModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C063E087806E8A8941C1A8C /* LowesSyncModule.swift */; };
+		4028B6EA7B14C1021A7A30B6 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51D708A6AC33CE7BF6E7985 /* KeychainService.swift */; };
+		41848C70875A25F0F89E3D82 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FF565FD33750763AB7DEB5 /* Theme.swift */; };
+		4263C7245ED82B40098D91E2 /* HDSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A80C8A30CADCCF2E103E070 /* HDSettingsView.swift */; };
+		46097E5A5B6371E5C8CD17A2 /* TransactionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0383E0FECBD21D61E4DED52 /* TransactionRow.swift */; };
+		47E47FD86DC6012DB1C0CA8D /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63EDDB6073E0111272C237B /* AppState.swift */; };
+		4B16F6DABDF2A29000184AA5 /* MonarchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E50C72FC263E106201C853 /* MonarchService.swift */; };
+		51130BFCEBA373BC56E28EB1 /* HDTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746004C3967E96C32FC5FDD8 /* HDTransaction.swift */; };
+		52EAB03183838CB4DFFE4571 /* HDImportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646EE0691466C47081C567E6 /* HDImportView.swift */; };
+		598063B90F400C665F80D117 /* EmailSyncModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F301FA5D11698CA3AB64BF8 /* EmailSyncModule.swift */; };
+		5BB13F5F6D6241B9A22A34BC /* MOJOButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E3BA1504BE26E85BACF2F7 /* MOJOButton.swift */; };
+		68156FD85543CC0008BC8025 /* HDHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DEBB767FED41735D1F3BD2 /* HDHistoryView.swift */; };
+		68C9D63963556909931E3DB2 /* EmailSyncModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F301FA5D11698CA3AB64BF8 /* EmailSyncModule.swift */; };
+		6B56974C128C36A6F10E74B3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D2327B6665B5DB7048D54B /* SettingsView.swift */; };
+		6C123105F6CDFD3C62C96C7D /* StatusBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B306EE65F0A5870B0093D52D /* StatusBadge.swift */; };
+		7222976799AE02358BDEEC8D /* HDTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746004C3967E96C32FC5FDD8 /* HDTransaction.swift */; };
+		74563148B861F7B7C27DFE9B /* StatCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B145CF3AC967C11CD76521FD /* StatCard.swift */; };
+		771A1411B7E6E38997115FC0 /* StatCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B145CF3AC967C11CD76521FD /* StatCard.swift */; };
+		7A24DE96E7CFDA405882DDEF /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513592C3C2DB139DE2070B8D /* EmptyStateView.swift */; };
+		82FDF16C6611B8C9EB134DFF /* HDSyncDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1550F70F8E49C72576BB75BB /* HDSyncDashboard.swift */; };
+		849B93C72633C11B1E079DEE /* HDMatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E791CA714259F6903635B5CD /* HDMatchView.swift */; };
+		899E95C2E0B7C237F6EC0386 /* MatchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D226A9F222F018652A097A6B /* MatchResult.swift */; };
+		8A56C439DAC4D17823B8A787 /* MOJOModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EEBEAD6DFE45B5D9F82DD1 /* MOJOModule.swift */; };
+		8AD3E0EB849208460AD9F928 /* ReportBuilderModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1A3968B39E66ECD65D21DC /* ReportBuilderModule.swift */; };
+		8F1B3659A8F1EE4A24475010 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2094474E7D726CF3E928EEF0 /* ContentView.swift */; };
+		97CBB82B1C20A82A2457C607 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC2F697C443C4797E2004D0 /* SectionHeader.swift */; };
+		9D8FA69A1A9B6007FB7D6A8E /* HDSyncPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4169C913B4C3A5BD72F559 /* HDSyncPreviewView.swift */; };
+		A588D9F16B03DF74E7E5F9C5 /* PythonBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AC8B8DDEC85F8141088538 /* PythonBridge.swift */; };
+		A6222E063D9659FDCC348865 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760CEC0C5FBE690575EE4A28 /* DashboardView.swift */; };
+		AF47B1D63940DD98802F7264 /* ProjectTrackerModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98469D3D5D04F8C3E81131A /* ProjectTrackerModule.swift */; };
+		B44D2D7D92E8436CA092E4C3 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63EDDB6073E0111272C237B /* AppState.swift */; };
+		BF6F58347BA0F065C40371F2 /* LowesSyncModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C063E087806E8A8941C1A8C /* LowesSyncModule.swift */; };
+		C43945A1958E13C6491AFB04 /* HDSyncPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4169C913B4C3A5BD72F559 /* HDSyncPreviewView.swift */; };
+		C9F9ABB398EE91339BEEB02D /* HDSyncDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1550F70F8E49C72576BB75BB /* HDSyncDashboard.swift */; };
+		CB368B2D3E867E96D0C66EE7 /* ModuleRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C69E52E2A38CA3581943AB /* ModuleRegistry.swift */; };
+		D0ACEB9F4444412DCC69A21B /* MOJOModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EEBEAD6DFE45B5D9F82DD1 /* MOJOModule.swift */; };
+		D4340F0B0A1117BD1C67E552 /* HDLineItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0CB3D1FC043C70D19309FB /* HDLineItem.swift */; };
+		D487C0893A2BF29332D3FC9E /* MojoMoneyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1F1522B2F44FF813ECF844 /* MojoMoneyApp.swift */; };
+		D60F4165E3DFE30AFACACAE9 /* ProjectTrackerModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98469D3D5D04F8C3E81131A /* ProjectTrackerModule.swift */; };
+		E45A4526522F37EA41587898 /* StatusBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B306EE65F0A5870B0093D52D /* StatusBadge.swift */; };
+		E4E20D856926C88A0F59A6CA /* ReportBuilderModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1A3968B39E66ECD65D21DC /* ReportBuilderModule.swift */; };
+		E622A1EB1156F555C788C8BE /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513592C3C2DB139DE2070B8D /* EmptyStateView.swift */; };
+		E68D8D0D87233FB9949EFC27 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FF565FD33750763AB7DEB5 /* Theme.swift */; };
+		E7DD932E6F58E83E93DB1DDF /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC2F697C443C4797E2004D0 /* SectionHeader.swift */; };
+		EB9FB86271A350A256A2FD19 /* MonarchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E50C72FC263E106201C853 /* MonarchService.swift */; };
+		EBE0B89670E07D5C5B72ED83 /* HDSyncModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC3125D58714E450653C3F0 /* HDSyncModule.swift */; };
+		EC4EF9A8F60DD2EF174039D5 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760CEC0C5FBE690575EE4A28 /* DashboardView.swift */; };
+		ECBC982C811CD0CAE23A1FDC /* SyncRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6BA72F0600DF76F136F487 /* SyncRun.swift */; };
+		EDC7EA1310256E52B4BC8104 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 851412F6F3FD9CFD3D99A768 /* Assets.xcassets */; };
+		EE02905E4455D742CE14AB74 /* HDSyncModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC3125D58714E450653C3F0 /* HDSyncModule.swift */; };
+		FE5AC70633B193DBD1B53911 /* PythonBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AC8B8DDEC85F8141088538 /* PythonBridge.swift */; };
+		FF9325B8BDA4AC434A94F31A /* HDMatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E791CA714259F6903635B5CD /* HDMatchView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		08ABC51E21E21DB684B77F82 /* MojoMoney.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MojoMoney.entitlements; sourceTree = "<group>"; };
+		0A80C8A30CADCCF2E103E070 /* HDSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HDSettingsView.swift; sourceTree = "<group>"; };
+		0DC3125D58714E450653C3F0 /* HDSyncModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HDSyncModule.swift; sourceTree = "<group>"; };
+		1550F70F8E49C72576BB75BB /* HDSyncDashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HDSyncDashboard.swift; sourceTree = "<group>"; };
+		2094474E7D726CF3E928EEF0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		23EEBEAD6DFE45B5D9F82DD1 /* MOJOModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOJOModule.swift; sourceTree = "<group>"; };
+		2C063E087806E8A8941C1A8C /* LowesSyncModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LowesSyncModule.swift; sourceTree = "<group>"; };
+		2CF713DDDAF52076CFE42427 /* MojoMoney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MojoMoney.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D1F1522B2F44FF813ECF844 /* MojoMoneyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MojoMoneyApp.swift; sourceTree = "<group>"; };
+		2FC2F697C443C4797E2004D0 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
+		394DD484F9302B34D09A5BAB /* MojoMoney.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = MojoMoney.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		45E50C72FC263E106201C853 /* MonarchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonarchService.swift; sourceTree = "<group>"; };
+		513592C3C2DB139DE2070B8D /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
+		646EE0691466C47081C567E6 /* HDImportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HDImportView.swift; sourceTree = "<group>"; };
+		68DEBB767FED41735D1F3BD2 /* HDHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HDHistoryView.swift; sourceTree = "<group>"; };
+		746004C3967E96C32FC5FDD8 /* HDTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HDTransaction.swift; sourceTree = "<group>"; };
+		760CEC0C5FBE690575EE4A28 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		76D2327B6665B5DB7048D54B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		7ACDF765510AEE3BD5EBFE71 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		851412F6F3FD9CFD3D99A768 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		93AC8B8DDEC85F8141088538 /* PythonBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PythonBridge.swift; sourceTree = "<group>"; };
+		9F301FA5D11698CA3AB64BF8 /* EmailSyncModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSyncModule.swift; sourceTree = "<group>"; };
+		9F6BA72F0600DF76F136F487 /* SyncRun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncRun.swift; sourceTree = "<group>"; };
+		A0C69E52E2A38CA3581943AB /* ModuleRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleRegistry.swift; sourceTree = "<group>"; };
+		AD4169C913B4C3A5BD72F559 /* HDSyncPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HDSyncPreviewView.swift; sourceTree = "<group>"; };
+		B145CF3AC967C11CD76521FD /* StatCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatCard.swift; sourceTree = "<group>"; };
+		B306EE65F0A5870B0093D52D /* StatusBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBadge.swift; sourceTree = "<group>"; };
+		B7FF565FD33750763AB7DEB5 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		BC0CB3D1FC043C70D19309FB /* HDLineItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HDLineItem.swift; sourceTree = "<group>"; };
+		C1F5140E1E6BCB5E708B33D5 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
+		C9E3BA1504BE26E85BACF2F7 /* MOJOButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOJOButton.swift; sourceTree = "<group>"; };
+		CA1A3968B39E66ECD65D21DC /* ReportBuilderModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportBuilderModule.swift; sourceTree = "<group>"; };
+		D0383E0FECBD21D61E4DED52 /* TransactionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRow.swift; sourceTree = "<group>"; };
+		D226A9F222F018652A097A6B /* MatchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchResult.swift; sourceTree = "<group>"; };
+		D63EDDB6073E0111272C237B /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		E791CA714259F6903635B5CD /* HDMatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HDMatchView.swift; sourceTree = "<group>"; };
+		F51D708A6AC33CE7BF6E7985 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
+		F98469D3D5D04F8C3E81131A /* ProjectTrackerModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTrackerModule.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		06B3007FCCA719E475E9850E /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				513592C3C2DB139DE2070B8D /* EmptyStateView.swift */,
+				C9E3BA1504BE26E85BACF2F7 /* MOJOButton.swift */,
+				2FC2F697C443C4797E2004D0 /* SectionHeader.swift */,
+				B145CF3AC967C11CD76521FD /* StatCard.swift */,
+				B306EE65F0A5870B0093D52D /* StatusBadge.swift */,
+				D0383E0FECBD21D61E4DED52 /* TransactionRow.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		120315E86F5434C98E9DF3FF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2094474E7D726CF3E928EEF0 /* ContentView.swift */,
+				760CEC0C5FBE690575EE4A28 /* DashboardView.swift */,
+				7ACDF765510AEE3BD5EBFE71 /* OnboardingView.swift */,
+				76D2327B6665B5DB7048D54B /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		14ABB4CEA65084AF146EE110 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				D63EDDB6073E0111272C237B /* AppState.swift */,
+				2D1F1522B2F44FF813ECF844 /* MojoMoneyApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		3061F33CA1ABA6DF4911CF08 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				06B3007FCCA719E475E9850E /* Components */,
+				120315E86F5434C98E9DF3FF /* Views */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		34546212F6BC4B2B17CD8363 = {
+			isa = PBXGroup;
+			children = (
+				648D8E357C6D3B27C9A34AC7 /* MojoMoney */,
+				E893B60B8B8AF44E768F2A85 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		44570BAFEA4470C5F7BE4BC5 /* HDSync */ = {
+			isa = PBXGroup;
+			children = (
+				0DC3125D58714E450653C3F0 /* HDSyncModule.swift */,
+				82506DAFF0F6DC2056021C52 /* Models */,
+				E04E850C9C898E29E4A9F25F /* Views */,
+			);
+			path = HDSync;
+			sourceTree = "<group>";
+		};
+		52217088A9E2E265303BA24D /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				5BB9FB0A23E9004A24B23202 /* EmailSync */,
+				44570BAFEA4470C5F7BE4BC5 /* HDSync */,
+				5B2626B2D36405B959F7BBE0 /* LowesSync */,
+				D60F8F5132DD5D544B176C84 /* ProjectTracker */,
+				783B2CDB863B7986AD1ADB63 /* ReportBuilder */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		5B2626B2D36405B959F7BBE0 /* LowesSync */ = {
+			isa = PBXGroup;
+			children = (
+				2C063E087806E8A8941C1A8C /* LowesSyncModule.swift */,
+			);
+			path = LowesSync;
+			sourceTree = "<group>";
+		};
+		5BB9FB0A23E9004A24B23202 /* EmailSync */ = {
+			isa = PBXGroup;
+			children = (
+				9F301FA5D11698CA3AB64BF8 /* EmailSyncModule.swift */,
+			);
+			path = EmailSync;
+			sourceTree = "<group>";
+		};
+		648D8E357C6D3B27C9A34AC7 /* MojoMoney */ = {
+			isa = PBXGroup;
+			children = (
+				851412F6F3FD9CFD3D99A768 /* Assets.xcassets */,
+				08ABC51E21E21DB684B77F82 /* MojoMoney.entitlements */,
+				14ABB4CEA65084AF146EE110 /* App */,
+				D77EA16F0CA296C04CC32D4B /* Core */,
+				52217088A9E2E265303BA24D /* Modules */,
+				3061F33CA1ABA6DF4911CF08 /* Shared */,
+			);
+			path = MojoMoney;
+			sourceTree = "<group>";
+		};
+		783B2CDB863B7986AD1ADB63 /* ReportBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				CA1A3968B39E66ECD65D21DC /* ReportBuilderModule.swift */,
+			);
+			path = ReportBuilder;
+			sourceTree = "<group>";
+		};
+		82506DAFF0F6DC2056021C52 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BC0CB3D1FC043C70D19309FB /* HDLineItem.swift */,
+				746004C3967E96C32FC5FDD8 /* HDTransaction.swift */,
+				D226A9F222F018652A097A6B /* MatchResult.swift */,
+				9F6BA72F0600DF76F136F487 /* SyncRun.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D60F8F5132DD5D544B176C84 /* ProjectTracker */ = {
+			isa = PBXGroup;
+			children = (
+				F98469D3D5D04F8C3E81131A /* ProjectTrackerModule.swift */,
+			);
+			path = ProjectTracker;
+			sourceTree = "<group>";
+		};
+		D77EA16F0CA296C04CC32D4B /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				C1F5140E1E6BCB5E708B33D5 /* DatabaseService.swift */,
+				F51D708A6AC33CE7BF6E7985 /* KeychainService.swift */,
+				A0C69E52E2A38CA3581943AB /* ModuleRegistry.swift */,
+				23EEBEAD6DFE45B5D9F82DD1 /* MOJOModule.swift */,
+				45E50C72FC263E106201C853 /* MonarchService.swift */,
+				93AC8B8DDEC85F8141088538 /* PythonBridge.swift */,
+				B7FF565FD33750763AB7DEB5 /* Theme.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		E04E850C9C898E29E4A9F25F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				68DEBB767FED41735D1F3BD2 /* HDHistoryView.swift */,
+				646EE0691466C47081C567E6 /* HDImportView.swift */,
+				E791CA714259F6903635B5CD /* HDMatchView.swift */,
+				0A80C8A30CADCCF2E103E070 /* HDSettingsView.swift */,
+				1550F70F8E49C72576BB75BB /* HDSyncDashboard.swift */,
+				AD4169C913B4C3A5BD72F559 /* HDSyncPreviewView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E893B60B8B8AF44E768F2A85 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				394DD484F9302B34D09A5BAB /* MojoMoney.app */,
+				2CF713DDDAF52076CFE42427 /* MojoMoney.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0C498A37D553BD4A2FD173A0 /* MojoMoney_macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CFBAE1A0EDC1DA920DCFA54F /* Build configuration list for PBXNativeTarget "MojoMoney_macOS" */;
+			buildPhases = (
+				4281B851AFBFDE426E4DA4AE /* Sources */,
+				B7AABFABDB1BFAD270BD721A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MojoMoney_macOS;
+			packageProductDependencies = (
+			);
+			productName = MojoMoney_macOS;
+			productReference = 2CF713DDDAF52076CFE42427 /* MojoMoney.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F7EBAC06AB7A33DFC79A5A49 /* MojoMoney_iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85B22E13DC2403B0FB9CEC51 /* Build configuration list for PBXNativeTarget "MojoMoney_iOS" */;
+			buildPhases = (
+				560F450EA726818944373D1B /* Sources */,
+				CDFB5039B84BD30E49187F02 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MojoMoney_iOS;
+			packageProductDependencies = (
+			);
+			productName = MojoMoney_iOS;
+			productReference = 394DD484F9302B34D09A5BAB /* MojoMoney.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DDBF2DB3BE0E5821B8712111 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					0C498A37D553BD4A2FD173A0 = {
+						ProvisioningStyle = Automatic;
+					};
+					F7EBAC06AB7A33DFC79A5A49 = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 5C8447C4D5E696D7F82DB2E2 /* Build configuration list for PBXProject "MojoMoney" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 34546212F6BC4B2B17CD8363;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = E893B60B8B8AF44E768F2A85 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F7EBAC06AB7A33DFC79A5A49 /* MojoMoney_iOS */,
+				0C498A37D553BD4A2FD173A0 /* MojoMoney_macOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B7AABFABDB1BFAD270BD721A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDC7EA1310256E52B4BC8104 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDFB5039B84BD30E49187F02 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EE1C67A2C16970B44F13ABD /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4281B851AFBFDE426E4DA4AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47E47FD86DC6012DB1C0CA8D /* AppState.swift in Sources */,
+				3658D4BCCCECC7CA82595FFE /* ContentView.swift in Sources */,
+				A6222E063D9659FDCC348865 /* DashboardView.swift in Sources */,
+				33B91790A4F2F852195DB332 /* DatabaseService.swift in Sources */,
+				68C9D63963556909931E3DB2 /* EmailSyncModule.swift in Sources */,
+				E622A1EB1156F555C788C8BE /* EmptyStateView.swift in Sources */,
+				2C323E353FE9FD0BF8FFA076 /* HDHistoryView.swift in Sources */,
+				52EAB03183838CB4DFFE4571 /* HDImportView.swift in Sources */,
+				D4340F0B0A1117BD1C67E552 /* HDLineItem.swift in Sources */,
+				FF9325B8BDA4AC434A94F31A /* HDMatchView.swift in Sources */,
+				4263C7245ED82B40098D91E2 /* HDSettingsView.swift in Sources */,
+				C9F9ABB398EE91339BEEB02D /* HDSyncDashboard.swift in Sources */,
+				EBE0B89670E07D5C5B72ED83 /* HDSyncModule.swift in Sources */,
+				C43945A1958E13C6491AFB04 /* HDSyncPreviewView.swift in Sources */,
+				51130BFCEBA373BC56E28EB1 /* HDTransaction.swift in Sources */,
+				4028B6EA7B14C1021A7A30B6 /* KeychainService.swift in Sources */,
+				3BEE5FF617EDAAA8B7BC9ED4 /* LowesSyncModule.swift in Sources */,
+				5BB13F5F6D6241B9A22A34BC /* MOJOButton.swift in Sources */,
+				8A56C439DAC4D17823B8A787 /* MOJOModule.swift in Sources */,
+				206BF136F6E4216AE7631349 /* MatchResult.swift in Sources */,
+				CB368B2D3E867E96D0C66EE7 /* ModuleRegistry.swift in Sources */,
+				D487C0893A2BF29332D3FC9E /* MojoMoneyApp.swift in Sources */,
+				EB9FB86271A350A256A2FD19 /* MonarchService.swift in Sources */,
+				2315CC529D81781A3C5C4B72 /* OnboardingView.swift in Sources */,
+				D60F4165E3DFE30AFACACAE9 /* ProjectTrackerModule.swift in Sources */,
+				A588D9F16B03DF74E7E5F9C5 /* PythonBridge.swift in Sources */,
+				E4E20D856926C88A0F59A6CA /* ReportBuilderModule.swift in Sources */,
+				97CBB82B1C20A82A2457C607 /* SectionHeader.swift in Sources */,
+				09B42C53C8E66C10E3BF1C19 /* SettingsView.swift in Sources */,
+				771A1411B7E6E38997115FC0 /* StatCard.swift in Sources */,
+				E45A4526522F37EA41587898 /* StatusBadge.swift in Sources */,
+				ECBC982C811CD0CAE23A1FDC /* SyncRun.swift in Sources */,
+				E68D8D0D87233FB9949EFC27 /* Theme.swift in Sources */,
+				1843ADB36ED4E0C0A43FB146 /* TransactionRow.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		560F450EA726818944373D1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B44D2D7D92E8436CA092E4C3 /* AppState.swift in Sources */,
+				8F1B3659A8F1EE4A24475010 /* ContentView.swift in Sources */,
+				EC4EF9A8F60DD2EF174039D5 /* DashboardView.swift in Sources */,
+				0FBF3C54C131684E7B582F33 /* DatabaseService.swift in Sources */,
+				598063B90F400C665F80D117 /* EmailSyncModule.swift in Sources */,
+				7A24DE96E7CFDA405882DDEF /* EmptyStateView.swift in Sources */,
+				68156FD85543CC0008BC8025 /* HDHistoryView.swift in Sources */,
+				29E3D2AB652506C4B0EF6FD0 /* HDImportView.swift in Sources */,
+				2F567F5EC72B98CB3E2F50AC /* HDLineItem.swift in Sources */,
+				849B93C72633C11B1E079DEE /* HDMatchView.swift in Sources */,
+				18DA24317C9A121AD7248E88 /* HDSettingsView.swift in Sources */,
+				82FDF16C6611B8C9EB134DFF /* HDSyncDashboard.swift in Sources */,
+				EE02905E4455D742CE14AB74 /* HDSyncModule.swift in Sources */,
+				9D8FA69A1A9B6007FB7D6A8E /* HDSyncPreviewView.swift in Sources */,
+				7222976799AE02358BDEEC8D /* HDTransaction.swift in Sources */,
+				16762641C4ED38B3F1EFD1C1 /* KeychainService.swift in Sources */,
+				BF6F58347BA0F065C40371F2 /* LowesSyncModule.swift in Sources */,
+				1D84DE92F9F3E9367C5E7405 /* MOJOButton.swift in Sources */,
+				D0ACEB9F4444412DCC69A21B /* MOJOModule.swift in Sources */,
+				899E95C2E0B7C237F6EC0386 /* MatchResult.swift in Sources */,
+				06C5FE89D385D387DCD95F6A /* ModuleRegistry.swift in Sources */,
+				32BFF07EF86A8B30CB1393A6 /* MojoMoneyApp.swift in Sources */,
+				4B16F6DABDF2A29000184AA5 /* MonarchService.swift in Sources */,
+				1C9D4F84C807E622BD15266F /* OnboardingView.swift in Sources */,
+				AF47B1D63940DD98802F7264 /* ProjectTrackerModule.swift in Sources */,
+				FE5AC70633B193DBD1B53911 /* PythonBridge.swift in Sources */,
+				8AD3E0EB849208460AD9F928 /* ReportBuilderModule.swift in Sources */,
+				E7DD932E6F58E83E93DB1DDF /* SectionHeader.swift in Sources */,
+				6B56974C128C36A6F10E74B3 /* SettingsView.swift in Sources */,
+				74563148B861F7B7C27DFE9B /* StatCard.swift in Sources */,
+				6C123105F6CDFD3C62C96C7D /* StatusBadge.swift in Sources */,
+				27FF4E3DB8E4A5BCCF55F7F9 /* SyncRun.swift in Sources */,
+				41848C70875A25F0F89E3D82 /* Theme.swift in Sources */,
+				46097E5A5B6371E5C8CD17A2 /* TransactionRow.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		0C48686AAF6C94C157CE68A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MojoMoney/MojoMoney.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableDescription = "MOJO Money — Monarch, on autopilot.";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mojomoney.app;
+				PRODUCT_NAME = "MOJO Money";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		10D394B7B33487FD2302D5BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MojoMoney/MojoMoney.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableDescription = "MOJO Money — Monarch, on autopilot.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mojomoney.app;
+				PRODUCT_NAME = "MOJO Money";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.9;
+			};
+			name = Release;
+		};
+		199AE05FF8F87AECC12C53EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MojoMoney/MojoMoney.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableDescription = "MOJO Money — Monarch, on autopilot.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mojomoney.app;
+				PRODUCT_NAME = "MOJO Money";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.9;
+			};
+			name = Debug;
+		};
+		3727B0E60CC07912832D010F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MojoMoney/MojoMoney.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableDescription = "MOJO Money — Monarch, on autopilot.";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mojomoney.app;
+				PRODUCT_NAME = "MOJO Money";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4E8CC722830500367D603BB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		F4A95AEC61A299CC2A1B0804 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5C8447C4D5E696D7F82DB2E2 /* Build configuration list for PBXProject "MojoMoney" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4A95AEC61A299CC2A1B0804 /* Debug */,
+				4E8CC722830500367D603BB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		85B22E13DC2403B0FB9CEC51 /* Build configuration list for PBXNativeTarget "MojoMoney_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3727B0E60CC07912832D010F /* Debug */,
+				0C48686AAF6C94C157CE68A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		CFBAE1A0EDC1DA920DCFA54F /* Build configuration list for PBXNativeTarget "MojoMoney_macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				199AE05FF8F87AECC12C53EA /* Debug */,
+				10D394B7B33487FD2302D5BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DDBF2DB3BE0E5821B8712111 /* Project object */;
+}

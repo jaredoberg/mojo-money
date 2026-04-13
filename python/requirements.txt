@@ -1,0 +1,2 @@
+monarchmoney>=0.6.0
+pandas>=2.0.0
