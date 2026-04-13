@@ -117,11 +117,17 @@ struct SettingsView: View {
         if pythonExecutable.isEmpty {
             pythonExecutable = PythonBridge.detectPython(projectRoot: projectRoot)
         }
+        // Sync resolved values into the shared bridge instance — it initializes
+        // once at app launch before these UserDefaults keys exist, so push updates now.
+        PythonBridge.shared.projectRoot      = projectRoot
+        PythonBridge.shared.pythonExecutable = pythonExecutable
     }
 
     func connectMonarch() async {
         connectMessage = nil
         isConnecting = true
+        PythonBridge.shared.projectRoot      = projectRoot
+        PythonBridge.shared.pythonExecutable = pythonExecutable
         do {
             try await appState.monarchService.authenticate(
                 email: email, password: password,
