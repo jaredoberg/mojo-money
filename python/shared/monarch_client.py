@@ -31,7 +31,13 @@ def authenticate(email: str, password: str, mfa_token: str | None = None) -> dic
 
 
 async def _login(mm: "MonarchMoney", email: str, password: str, mfa_token: str | None):
-    await mm.login(email=email, password=password, mfa_secret_key=mfa_token)
+    # use_saved_session=False so we always do a fresh login; save_session=False to
+    # avoid writing the pickle file (we manage the token ourselves via Keychain)
+    await mm.login(
+        email=email, password=password,
+        use_saved_session=False, save_session=False,
+        mfa_secret_key=mfa_token
+    )
 
 
 # ---------------------------------------------------------------------------
@@ -42,7 +48,7 @@ def get_transactions(session_token: str, date_from: str, date_to: str,
                      search: str = "Home Depot") -> list[dict]:
     """Fetch Monarch transactions filtered to the given date range and merchant search."""
     mm = _require_monarch()
-    mm.token = session_token
+    mm.set_token(session_token)
     results = asyncio.run(_fetch_transactions(mm, date_from, date_to, search))
     return results
 
@@ -75,7 +81,7 @@ async def _fetch_transactions(mm: "MonarchMoney", date_from: str, date_to: str,
 def update_transaction(session_token: str, transaction_id: str,
                        notes: str | None = None, category_id: str | None = None) -> bool:
     mm = _require_monarch()
-    mm.token = session_token
+    mm.set_token(session_token)
     return asyncio.run(_update_tx(mm, transaction_id, notes, category_id))
 
 
@@ -91,7 +97,7 @@ async def _update_tx(mm, tx_id: str, notes: str | None, category_id: str | None)
 
 def get_or_create_tag(session_token: str, name: str) -> str | None:
     mm = _require_monarch()
-    mm.token = session_token
+    mm.set_token(session_token)
     return asyncio.run(_get_or_create_tag(mm, name))
 
 
@@ -100,13 +106,15 @@ async def _get_or_create_tag(mm, name: str) -> str | None:
     existing = {t["name"].lower(): t["id"] for t in tags.get("householdTransactionTags", [])}
     if name.lower() in existing:
         return existing[name.lower()]
-    result = await mm.create_transaction_tag(name)
-    return result.get("id")
+    result = await mm.create_transaction_tag(name, color="#00C6AE")
+    # Response is {"createTransactionTag": {"tag": {"id": ..., ...}}}
+    tag = (result.get("createTransactionTag") or {}).get("tag") or result
+    return tag.get("id")
 
 
 def set_tags(session_token: str, transaction_id: str, tag_ids: list[str]) -> bool:
     mm = _require_monarch()
-    mm.token = session_token
+    mm.set_token(session_token)
     return asyncio.run(_set_tags(mm, transaction_id, tag_ids))
 
 
