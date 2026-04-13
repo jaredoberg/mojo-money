@@ -155,22 +155,39 @@ final class PythonBridge: ObservableObject {
     }
 
     static func detectProjectRoot() -> String {
-        // Walk up from bundle looking for python/mojo_runner.py
+        let fm   = FileManager.default
+        let home = NSHomeDirectory()
+
+        // Check common repo locations first — these work during Xcode development
+        // where the bundle is deep inside DerivedData
+        let knownLocations = [
+            "\(home)/Repos/mojo-money",
+            "\(home)/repos/mojo-money",
+            "\(home)/Developer/mojo-money",
+            "\(home)/Documents/mojo-money",
+            "\(home)/Desktop/mojo-money",
+        ]
+        for path in knownLocations {
+            if fm.fileExists(atPath: "\(path)/python/mojo_runner.py") {
+                return path
+            }
+        }
+
+        // Walk up from app bundle (works for release builds / bundled python)
         var url = Bundle.main.bundleURL
-        for _ in 0..<8 {
+        for _ in 0..<10 {
             url = url.deletingLastPathComponent()
-            let candidate = url.appendingPathComponent("python/mojo_runner.py").path
-            if FileManager.default.fileExists(atPath: candidate) {
+            if fm.fileExists(atPath: url.appendingPathComponent("python/mojo_runner.py").path) {
                 return url.path
             }
         }
-        // Last resort: bundle resource path
-        if let rp = Bundle.main.resourcePath {
-            let candidate = "\(rp)/python/mojo_runner.py"
-            if FileManager.default.fileExists(atPath: candidate) {
-                return rp
-            }
+
+        // Bundle resources (python/ copied into app bundle)
+        if let rp = Bundle.main.resourcePath,
+           fm.fileExists(atPath: "\(rp)/python/mojo_runner.py") {
+            return rp
         }
+
         return ""
     }
 }
