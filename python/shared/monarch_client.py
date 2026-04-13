@@ -8,9 +8,11 @@ from typing import Any
 
 try:
     from monarchmoney import MonarchMoney
+    from monarchmoney.monarchmoney import RequireMFAException
     MONARCH_AVAILABLE = True
 except ImportError:
     MONARCH_AVAILABLE = False
+    RequireMFAException = Exception  # placeholder so references compile
 
 
 def _require_monarch() -> "MonarchMoney":
@@ -33,11 +35,29 @@ def authenticate(email: str, password: str, mfa_token: str | None = None) -> dic
 async def _login(mm: "MonarchMoney", email: str, password: str, mfa_token: str | None):
     # use_saved_session=False so we always do a fresh login; save_session=False to
     # avoid writing the pickle file (we manage the token ourselves via Keychain)
-    await mm.login(
-        email=email, password=password,
-        use_saved_session=False, save_session=False,
-        mfa_secret_key=mfa_token
-    )
+    token = mfa_token.strip() if mfa_token else None
+
+    # A short all-digit string is a one-time passcode from an authenticator app.
+    # The library's mfa_secret_key parameter expects the raw TOTP base32 seed
+    # instead — so we use the two-step flow (login → RequireMFAException →
+    # multi_factor_authenticate) when the user supplies a numeric OTP.
+    is_otp_code = token is not None and token.isdigit() and len(token) in (6, 7, 8)
+
+    if is_otp_code:
+        try:
+            await mm.login(
+                email=email, password=password,
+                use_saved_session=False, save_session=False,
+            )
+        except RequireMFAException:
+            await mm.multi_factor_authenticate(email, password, token)
+    else:
+        # token is either None or a TOTP base32 secret key
+        await mm.login(
+            email=email, password=password,
+            use_saved_session=False, save_session=False,
+            mfa_secret_key=token,
+        )
 
 
 # ---------------------------------------------------------------------------

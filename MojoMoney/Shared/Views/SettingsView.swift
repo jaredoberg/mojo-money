@@ -39,7 +39,7 @@ struct SettingsView: View {
                     .autocapitalization(.none)
                     #endif
                 SecureField("Password", text: $password)
-                TextField("MFA Token (ephemeral)", text: $mfaToken)
+                TextField("MFA Code or TOTP Secret (optional)", text: $mfaToken)
 
                 if let msg = connectMessage {
                     Text(msg.text)
@@ -47,7 +47,7 @@ struct SettingsView: View {
                         .foregroundColor(msg.isError ? .mojoDestructive : .mojoSuccess)
                 }
 
-                Text("Requires Monarch password login. If you use Google SSO, set a password in Monarch Settings → Security first.")
+                Text("Requires Monarch password login. If you use Google SSO, set a password in Monarch Settings → Security first. Enter your 6-digit authenticator code for MFA, or leave blank if MFA is not enabled.")
                     .font(.caption)
                     .foregroundColor(.mojoTextSecondary)
 
