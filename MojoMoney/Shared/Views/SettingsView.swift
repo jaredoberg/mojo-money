@@ -13,8 +13,9 @@ struct SettingsView: View {
     @State private var isVerifyingPython = false
     @State private var showInstallSheet = false
 
-    @AppStorage("pythonExecutable") private var pythonExecutable = PythonBridge.detectPython()
     @AppStorage("projectRoot")      private var projectRoot      = PythonBridge.detectProjectRoot()
+    // detectPython resolves after projectRoot so we read it lazily in loadCredentials
+    @AppStorage("pythonExecutable") private var pythonExecutable = ""
 
     var body: some View {
         Form {
@@ -97,7 +98,11 @@ struct SettingsView: View {
         .navigationTitle("Settings")
         .onAppear(perform: loadCredentials)
         .sheet(isPresented: $showInstallSheet) {
-            InstallDepsSheet(projectRoot: projectRoot, pythonExecutable: pythonExecutable)
+            InstallDepsSheet(
+                projectRoot: projectRoot,
+                systemPython: PythonBridge.detectPython(projectRoot: ""),
+                pythonExecutable: $pythonExecutable
+            )
         }
     }
 
@@ -105,8 +110,13 @@ struct SettingsView: View {
         if let creds = KeychainService.shared.getMonarchCredentials() {
             email = creds.email
         }
-        pythonExecutable = UserDefaults.standard.string(forKey: "pythonExecutable") ?? PythonBridge.detectPython()
-        projectRoot      = UserDefaults.standard.string(forKey: "projectRoot")      ?? PythonBridge.detectProjectRoot()
+        // Resolve projectRoot first so venv detection works correctly
+        if projectRoot.isEmpty {
+            projectRoot = PythonBridge.detectProjectRoot()
+        }
+        if pythonExecutable.isEmpty {
+            pythonExecutable = PythonBridge.detectPython(projectRoot: projectRoot)
+        }
     }
 
     func connectMonarch() async {
@@ -130,6 +140,7 @@ struct SettingsView: View {
         pythonVerifyResult = nil
         let bridge = PythonBridge.shared
         bridge.pythonExecutable = pythonExecutable
+        bridge.projectRoot = projectRoot
         let (output, success) = await bridge.runRaw(arguments: ["-c", "import monarchmoney; print('OK — monarchmoney installed')"])
         pythonVerifyResult = success ? output : "Error: \(output)"
         isVerifyingPython = false
@@ -140,11 +151,16 @@ struct SettingsView: View {
 
 struct InstallDepsSheet: View {
     let projectRoot: String
-    let pythonExecutable: String
+    let systemPython: String          // fallback if venv doesn't exist yet
+    @Binding var pythonExecutable: String  // updated to venv path on success
     @Environment(\.dismiss) private var dismiss
     @State private var output = ""
     @State private var isRunning = false
     @State private var isDone = false
+    @State private var installedVenvPath = ""
+
+    var venvPython: String { "\(projectRoot)/python/.venv/bin/python3" }
+    var venvExists: Bool { FileManager.default.fileExists(atPath: venvPython) }
 
     var body: some View {
         VStack(alignment: .leading, spacing: MOJOSpacing.md) {
@@ -156,7 +172,9 @@ struct InstallDepsSheet: View {
                     .disabled(isRunning)
             }
 
-            Text("Running: \(pythonExecutable) -m pip install -r requirements.txt")
+            Text(venvExists
+                 ? "Updating venv at \(projectRoot)/python/.venv"
+                 : "Creating venv + installing into \(projectRoot)/python/.venv")
                 .font(.caption)
                 .foregroundColor(.mojoTextSecondary)
 
@@ -172,6 +190,10 @@ struct InstallDepsSheet: View {
             .frame(minHeight: 200)
 
             if isDone {
+                if !installedVenvPath.isEmpty {
+                    Text("Python path updated to venv.")
+                        .font(.caption).foregroundColor(.mojoSuccess)
+                }
                 MOJOButton(title: "Done", style: .primary) { dismiss() }
             }
         }
@@ -182,17 +204,47 @@ struct InstallDepsSheet: View {
 
     func runInstall() async {
         isRunning = true
-        let reqPath = "\(projectRoot)/python/requirements.txt"
-        let process = Process()
-        let pipe    = Pipe()
-        process.executableURL    = URL(fileURLWithPath: pythonExecutable)
-        process.arguments        = ["-m", "pip", "install", "-r", reqPath]
-        process.standardOutput   = pipe
-        process.standardError    = pipe
-        try? process.run()
-        process.waitUntilExit()
-        let data = pipe.fileHandleForReading.readDataToEndOfFile()
-        output   = String(data: data, encoding: .utf8) ?? "Done."
+        let reqPath    = "\(projectRoot)/python/requirements.txt"
+        let venvDir    = "\(projectRoot)/python/.venv"
+
+        var log = ""
+
+        func run(_ executable: String, _ args: [String]) -> Bool {
+            let p = Process()
+            let pipe = Pipe()
+            p.executableURL  = URL(fileURLWithPath: executable)
+            p.arguments      = args
+            p.standardOutput = pipe
+            p.standardError  = pipe
+            try? p.run()
+            p.waitUntilExit()
+            let out = String(data: pipe.fileHandleForReading.readDataToEndOfFile(), encoding: .utf8) ?? ""
+            log += out + "\n"
+            DispatchQueue.main.async { output = log }
+            return p.terminationStatus == 0
+        }
+
+        // Step 1: create venv if needed
+        if !FileManager.default.fileExists(atPath: venvPython) {
+            log += "Creating venv...\n"
+            DispatchQueue.main.async { output = log }
+            _ = run(systemPython, ["-m", "venv", venvDir])
+        }
+
+        // Step 2: install requirements into venv
+        log += "Installing requirements...\n"
+        DispatchQueue.main.async { output = log }
+        let ok = run(venvPython, ["-m", "pip", "install", "-r", reqPath])
+
+        if ok && FileManager.default.fileExists(atPath: venvPython) {
+            installedVenvPath = venvPython
+            DispatchQueue.main.async {
+                pythonExecutable = venvPython
+                UserDefaults.standard.set(venvPython, forKey: "pythonExecutable")
+                PythonBridge.shared.pythonExecutable = venvPython
+            }
+        }
+
         isRunning = false
         isDone    = true
     }

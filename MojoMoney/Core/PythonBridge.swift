@@ -37,8 +37,10 @@ final class PythonBridge: ObservableObject {
     @Published var projectRoot: String   // directory that contains python/
 
     init() {
-        pythonExecutable = UserDefaults.standard.string(forKey: "pythonExecutable") ?? PythonBridge.detectPython()
-        projectRoot      = UserDefaults.standard.string(forKey: "projectRoot")      ?? PythonBridge.detectProjectRoot()
+        let root = UserDefaults.standard.string(forKey: "projectRoot") ?? PythonBridge.detectProjectRoot()
+        projectRoot      = root
+        // Prefer stored value; if none, detect with venv awareness
+        pythonExecutable = UserDefaults.standard.string(forKey: "pythonExecutable") ?? PythonBridge.detectPython(projectRoot: root)
     }
 
     var runnerPath: String { "\(projectRoot)/python/mojo_runner.py" }
@@ -87,7 +89,7 @@ final class PythonBridge: ObservableObject {
                     if resp.success, let result = resp.data {
                         cont.resume(returning: result)
                     } else {
-                        let msg = resp.error ?? errStr.isEmpty ? "Unknown error" : errStr
+                        let msg = resp.error ?? (errStr.isEmpty ? "Unknown error" : errStr)
                         cont.resume(throwing: PythonBridgeError.executionFailed(msg))
                     }
                 } catch {
@@ -129,7 +131,18 @@ final class PythonBridge: ObservableObject {
 
     // MARK: - Auto-detection
 
-    static func detectPython() -> String {
+    /// Returns the best Python executable to use.
+    /// Prefers the venv inside the project root (which has monarchmoney installed),
+    /// falling back to system Python.
+    static func detectPython(projectRoot: String = "") -> String {
+        // Check venv first — this has monarchmoney installed
+        let root = projectRoot.isEmpty ? detectProjectRoot() : projectRoot
+        if !root.isEmpty {
+            let venvPython = "\(root)/python/.venv/bin/python3"
+            if FileManager.default.fileExists(atPath: venvPython) {
+                return venvPython
+            }
+        }
         let candidates = [
             "/opt/homebrew/bin/python3",
             "/usr/bin/python3",
